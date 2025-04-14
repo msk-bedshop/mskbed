@@ -1,0 +1,11 @@
+
+{
+  "builds": [
+    { "src": "api/send_order.py", "use": "@vercel/python" },
+    { "src": "frontend/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/(.*)", "dest": "api/send_order.py" },
+    { "src": "/(.*)", "dest": "frontend/index.html" }
+  ]
+}
